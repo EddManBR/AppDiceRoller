@@ -4,6 +4,7 @@ import android.app.role.RoleManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rollDice(){
-        Toast.makeText(this, "Button Clicked", Toast.LENGTH_SHORT).show()
+        val randomInt = (1..6).random()
+        val resultText = findViewById<TextView>(R.id.resultText)
+        resultText.text = randomInt.toString()
     }
 }
